@@ -11,12 +11,7 @@ def students_list(students):
     theory = input("Nhập điểm lý thuyết: ")
     practice = input("Nhập điểm thực hành: ")
     new_student = []
-    new_student.append(id)
-    new_student.append(full_name)
-    new_student.append(gender)
-    new_student.append(province)
-    new_student.append(theory)
-    new_student.append(practice)
+    new_student.extend((id,full_name,gender,province,theory,practice))
     students.append(new_student)
     return students
 def show_header():
