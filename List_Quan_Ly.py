@@ -8,10 +8,15 @@ def students_list(students):
     full_name = input("Nhập họ tên: ")
     gender = input("Nhập giới tính: ")
     province = input("Nhập Tỉnh/Thành phố: ")
-    theory = input("Nhập điểm lý thuyết: ")
-    practice = input("Nhập điểm thực hành: ")
-    new_student = []
-    new_student.extend((id,full_name,gender,province,theory,practice))
+    theory = int(input("Nhập điểm lý thuyết: "))
+    while theory > 100 or theory < 0:
+        print("Thang điểm từ 0 đến 100")
+        theory = int(input("Nhập điểm lý thuyết: "))
+    practice = int(input("Nhập điểm thực hành: "))
+    while practice > 100 or practice < 0:
+        print("Thang điểm từ 0 đến 100")
+        practice = int(input("Nhập điểm thực hành: "))
+    new_student = [id,full_name,gender,province,theory,practice]
     students.append(new_student)
     return students
 def show_header():
@@ -38,6 +43,8 @@ def remove_students(students):
                 students.remove(lst)
                 break
     return students
+
+
 def show_menu():
     print("""
     Hãy chọn tính năng muốn thực hiện.
